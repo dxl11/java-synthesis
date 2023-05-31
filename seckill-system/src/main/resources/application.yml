@@ -1,0 +1,22 @@
+server:
+  port: 9091
+
+
+spring:
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/java-synthesis?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 199522
+
+  data:
+    redis:
+      database: 0
+      host: 192.168.99.204
+      port: 6379
+      password: 199522
+
+# ?xml????resources?????????????????
+mybatis:
+  mapper-locations: classpath:sqlMap/*.xml
+
