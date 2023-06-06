@@ -67,8 +67,8 @@ public class DefaultExceptionHandlerConfig {
     }
 
     @ExceptionHandler(JavaSynthesisException.class)
-    public ResponseEntity<ServerResponseEntity<Object>> mall4cloudExceptionHandler(JavaSynthesisException e) {
-        logger.error("mall4cloudExceptionHandler", e);
+    public ResponseEntity<ServerResponseEntity<Object>> JavaSynthesisExceptionHandler(JavaSynthesisException e) {
+        logger.error("JavaSynthesisExceptionHandler", e);
 
         ResponseEnum responseEnum = e.getResponseEnum();
         // 失败返回失败消息 + 状态码

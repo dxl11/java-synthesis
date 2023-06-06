@@ -21,6 +21,7 @@
         <module>java-synthesis-seckill-system</module>
         <module>java-synthesis-api</module>
         <module>java-synthesis-common</module>
+        <module>java-synthesis-auth</module>
     </modules>
 
     <properties>
