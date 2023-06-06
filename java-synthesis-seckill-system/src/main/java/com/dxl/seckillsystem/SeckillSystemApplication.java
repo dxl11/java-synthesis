@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan(basePackages = "com/dxl/mall/mapper")
+@MapperScan(basePackages = "com.dxl.seckillsystem.mapper")
 @SpringBootApplication
 public class SeckillSystemApplication {
 
