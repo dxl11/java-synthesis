@@ -12,7 +12,7 @@ public interface UserCacheNames {
     /**
      * 前缀
      */
-    String USER_PREFIX = "mall4cloud_user:";
+    String USER_PREFIX = "synthesis_user:";
 
     /**
      * 用户信息缓存key

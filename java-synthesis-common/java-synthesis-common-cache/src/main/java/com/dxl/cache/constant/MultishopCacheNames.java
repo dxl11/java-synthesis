@@ -12,7 +12,7 @@ public interface MultishopCacheNames {
     /**
      * 前缀
      */
-    String MULTISHOP_PREFIX = "mall4cloud_multishop:";
+    String MULTISHOP_PREFIX = "synthesis_multishop:";
 
     /**
      * 店铺分类列表缓存key

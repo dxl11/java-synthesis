@@ -12,6 +12,6 @@ public interface BizCacheNames {
     /**
      * 前缀
      */
-    String COUPON_PREFIX = "mall4cloud_biz:";
+    String COUPON_PREFIX = "synthesis_biz:";
 
 }

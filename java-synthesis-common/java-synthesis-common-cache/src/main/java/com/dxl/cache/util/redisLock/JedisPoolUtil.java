@@ -1,4 +1,4 @@
-package com.dxl.cache.util;
+package com.dxl.cache.util.redisLock;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
