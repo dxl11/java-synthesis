@@ -24,8 +24,5 @@ public class RedissonController {
         //随机生成一个key，防止锁被其他释放
         UUID uuid = UUID.randomUUID();
         redisson.getLock(uuid.toString());
-
-
-
     }
 }

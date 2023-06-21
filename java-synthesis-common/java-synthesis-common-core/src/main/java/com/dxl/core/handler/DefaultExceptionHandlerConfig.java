@@ -4,8 +4,6 @@ import cn.hutool.core.util.StrUtil;
 import com.dxl.core.exception.JavaSynthesisException;
 import com.dxl.core.response.ResponseEnum;
 import com.dxl.core.response.ServerResponseEntity;
-import io.seata.core.context.RootContext;
-import io.seata.tm.api.GlobalTransactionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -80,12 +78,9 @@ public class DefaultExceptionHandlerConfig {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ServerResponseEntity<Object>> exceptionHandler(Exception e) throws TransactionException, io.seata.core.exception.TransactionException {
+    public ResponseEntity<ServerResponseEntity<Object>> exceptionHandler(Exception e) throws TransactionException{
         logger.error("exceptionHandler", e);
-        logger.info("RootContext.getXID(): " + RootContext.getXID());
-        if (StrUtil.isNotBlank(RootContext.getXID())) {
-            GlobalTransactionContext.reload(RootContext.getXID()).rollback();
-        }
+        logger.info("RootContext.getXID(): ");
         return ResponseEntity.status(HttpStatus.OK).body(ServerResponseEntity.fail(ResponseEnum.EXCEPTION));
     }
 }

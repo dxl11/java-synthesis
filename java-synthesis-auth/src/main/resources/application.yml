@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    # 应用名称
+    name: at-order-server
+
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/java-synthesis?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: 199522
+jwt:
+  # 密钥
+  secret: ddd.sss.xxsssxx
+  # 有效期（秒）
+  expire: 86400

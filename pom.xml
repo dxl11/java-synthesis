@@ -30,7 +30,7 @@
         <boot.start.version>1.3.2</boot.start.version>
         <connector.vwesion>8.0.25</connector.vwesion>
         <jsoup.version>1.13.1</jsoup.version>
-        <hutool-version>5.8.11</hutool-version>
+        <hutool-version>5.7.22</hutool-version>
         <seata.version>1.6.1</seata.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
         <spring-boot.version>2.7.7</spring-boot.version>
@@ -38,6 +38,9 @@
         <redis.version>2.7.3</redis.version>
         <redisson.version>3.2.3</redisson.version>
         <fastjson.version>1.2.80</fastjson.version>
+        <alibabaDruidStarter.version>1.2.11</alibabaDruidStarter.version>
+        <spring-cloud-release.version>2021.0.x aka Jubilee</spring-cloud-release.version>
+        <spring-cloud-alibaba.version>2021.0.4.0</spring-cloud-alibaba.version>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +49,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -69,26 +79,16 @@
                 <artifactId>jsoup</artifactId>
                 <version>${jsoup.version}</version>
             </dependency>
-
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-core</artifactId>
-                <version>${hutool-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-crypto</artifactId>
-                <version>${hutool-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-http</artifactId>
-                <version>${hutool-version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <!--     hu-tool工具包  -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool-version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -122,6 +122,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${alibabaDruidStarter.version}</version>
         </dependency>
 
         <!-- redis -->
@@ -165,6 +171,20 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <!--nacos作为服务配置中心 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2021.0.4.0</version>
+        </dependency>
+        <!--    基于alibaba的nacos实现服务注册管理,当添加了此依赖后，系统启动时 会向nacos
+        服务发送一些心跳包，进行服务注册 一般5秒会发送一次。服务的注册和发现-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2022.0.0.0-RC1</version>
         </dependency>
     </dependencies>
 
