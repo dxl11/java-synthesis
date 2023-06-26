@@ -38,7 +38,31 @@ public enum ResponseEnum {
     /**
      * 服务器出了点小差
      */
-    EXCEPTION("A00005", "服务器出了点小差");
+    EXCEPTION("A00005", "服务器出了点小差"),
+
+    /**
+     * 接口限流了
+     */
+    INTERFACELIMIT("100", "接口限流了"),
+
+    /**
+     * 接口限流了
+     */
+    SERVICEDEGRADATION("101", "服务降级了"),
+
+    /**
+     * 热点参数限流了
+     */
+    HOTKEYLIMIT("102", "热点参数限流了"),
+    /**
+     * 触发系统保护规则了
+     */
+    TOUCHOFFPROTECTRULE("103", "触发系统保护规则了"),
+    /**
+     * 授权规则不通过
+     */
+    AUTHORIZATIONRULEREFUSE("104", "授权规则不通过");
+
 
 
 
