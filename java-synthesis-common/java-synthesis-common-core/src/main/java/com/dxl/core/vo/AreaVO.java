@@ -1,6 +1,4 @@
-package com.dxl.javasynthesisuser.vo;
-
-import com.dxl.core.vo.BaseVO;
+package com.dxl.core.vo;
 
 import java.util.List;
 

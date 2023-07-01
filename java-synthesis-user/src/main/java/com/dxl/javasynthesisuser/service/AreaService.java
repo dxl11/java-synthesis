@@ -1,8 +1,8 @@
 package com.dxl.javasynthesisuser.service;
 
 
+import com.dxl.core.vo.AreaVO;
 import com.dxl.javasynthesisuser.model.Area;
-import com.dxl.javasynthesisuser.vo.AreaVO;
 
 import java.util.List;
 

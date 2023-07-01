@@ -22,7 +22,6 @@
 
     <modules>
         <module>java-synthesis-common-core</module>
-        <module>java-synthesis-common-security</module>
         <module>java-synthesis-common-cache</module>
     </modules>
 

@@ -1,7 +1,7 @@
 package com.dxl.javasynthesisuser.mapper;
 
+import com.dxl.core.vo.AreaVO;
 import com.dxl.javasynthesisuser.model.Area;
-import com.dxl.javasynthesisuser.vo.AreaVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

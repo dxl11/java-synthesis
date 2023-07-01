@@ -3,10 +3,10 @@ package com.dxl.javasynthesisuser.service.impl;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.dxl.cache.constant.CacheNames;
 import com.dxl.core.exception.JavaSynthesisException;
+import com.dxl.core.vo.AreaVO;
 import com.dxl.javasynthesisuser.mapper.AreaMapper;
 import com.dxl.javasynthesisuser.model.Area;
 import com.dxl.javasynthesisuser.service.AreaService;
-import com.dxl.javasynthesisuser.vo.AreaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -84,8 +84,14 @@ public class AreaServiceImpl implements AreaService {
         areaMapper.deleteById(areaId);
     }
 
+    /**
+     * @SentinelResource 不止针对路径参数，还可以针对方法，
+     * 但是此场景拦截不到BlockException，所以BlockExceptionHandler不起作用，需要重新实现blockHandler
+     * @return java.lang.String
+     */
     @Override
     @Cacheable(cacheNames = CacheNames.AREA_KEY, key = "'list:' + #pid")
+    @SentinelResource(value = "getUser", blockHandler = "blockHandlerGetUser")
     public List<AreaVO> listByPid(Long pid) {
         return areaMapper.listByPid(pid);
     }
@@ -104,6 +110,7 @@ public class AreaServiceImpl implements AreaService {
             @CacheEvict(cacheNames = CacheNames.AREA_KEY, key = "'list:' + #pid"),
             @CacheEvict(cacheNames = CacheNames.AREA_INFO_KEY, key = "'areaList'")
     })
+
     public void removeAreaCacheByParentId(Long pid) {
 
     }
