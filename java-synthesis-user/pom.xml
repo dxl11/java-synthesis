@@ -49,6 +49,17 @@
         </dependency>
 
         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+        </dependency>
+
+
+        <dependency>
             <groupId>com.dxl</groupId>
             <artifactId>java-synthesis-common-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
