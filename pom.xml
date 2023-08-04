@@ -23,6 +23,7 @@
         <module>java-synthesis-common</module>
         <module>java-synthesis-auth</module>
         <module>java-synthesis-user</module>
+        <module>java-synthesis-concurrent</module>
     </modules>
 
     <properties>
